@@ -6,108 +6,38 @@
     <title>Catetin - Aplikasi Kelola Keuangan</title>
     <style>
         * { margin: 0; padding: 0; box-sizing: border-box; }
-        body {
-            font-family: 'Segoe UI', sans-serif;
-            background: #0F1B2D;
-            color: #E8F4F8;
-            min-height: 100vh;
-        }
-        header {
-            background: linear-gradient(135deg, #0D1B4B, #0F1B2D);
-            padding: 60px 20px;
-            text-align: center;
-            border-bottom: 1px solid #2A3F58;
-        }
-        .logo {
-            width: 120px;
-            height: 120px;
-            border-radius: 28px;
-            margin: 0 auto 20px;
-            display: block;
-        }
-        h1 {
-            font-size: 48px;
-            font-weight: 800;
-            color: #ffffff;
-            letter-spacing: -1px;
-        }
+        body { font-family: "Segoe UI", sans-serif; background: #0F1B2D; color: #E8F4F8; min-height: 100vh; }
+        header { background: linear-gradient(135deg, #0D1B4B, #0F1B2D); padding: 60px 20px; text-align: center; border-bottom: 1px solid #2A3F58; }
+        h1 { font-size: 48px; font-weight: 800; color: #fff; letter-spacing: -1px; }
         .dot { color: #00C9A7; }
-        .tagline {
-            font-size: 18px;
-            color: #A8C4E0;
-            margin-top: 10px;
-        }
-        .badge {
-            display: inline-block;
-            background: rgba(0,201,167,0.15);
-            border: 1px solid rgba(0,201,167,0.3);
-            color: #00C9A7;
-            padding: 6px 16px;
-            border-radius: 20px;
-            font-size: 13px;
-            margin-top: 16px;
-        }
-        .btn-download {
-            display: inline-block;
-            background: linear-gradient(90deg, #00C9A7, #00A38D);
-            color: white;
-            padding: 14px 36px;
-            border-radius: 12px;
-            font-size: 16px;
-            font-weight: 700;
-            text-decoration: none;
-            margin-top: 24px;
-        }
-        section {
-            max-width: 900px;
-            margin: 60px auto;
-            padding: 0 20px;
-        }
-        h2 {
-            font-size: 28px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 30px;
-            text-align: center;
-        }
-        .features {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 20px;
-        }
-        .feature-card {
-            background: #1E2D42;
-            border: 1px solid #2A3F58;
-            border-radius: 16px;
-            padding: 24px;
-        }
+        .tagline { font-size: 18px; color: #A8C4E0; margin-top: 10px; }
+        .badge { display: inline-block; background: rgba(0,201,167,0.15); border: 1px solid rgba(0,201,167,0.3); color: #00C9A7; padding: 6px 16px; border-radius: 20px; font-size: 13px; margin-top: 16px; }
+        .coming-soon-banner { background: linear-gradient(90deg, #F5A623, #e6951a); color: #0F1B2D; padding: 12px 24px; border-radius: 12px; font-size: 15px; font-weight: 700; display: inline-block; margin-top: 20px; }
+        .btn-notify { display: inline-block; background: linear-gradient(90deg, #00C9A7, #00A38D); color: white; padding: 14px 36px; border-radius: 12px; font-size: 16px; font-weight: 700; text-decoration: none; margin-top: 16px; cursor: pointer; border: none; }
+        .btn-disabled { display: inline-block; background: #2A3F58; color: #7B9BB5; padding: 14px 36px; border-radius: 12px; font-size: 16px; font-weight: 600; margin-top: 8px; cursor: not-allowed; }
+        .notify-form { margin-top: 20px; display: flex; gap: 10px; justify-content: center; flex-wrap: wrap; }
+        .notify-form input { padding: 12px 16px; border-radius: 10px; border: 1px solid #2A3F58; background: #1E2D42; color: #E8F4F8; font-size: 14px; width: 260px; outline: none; }
+        .notify-form input::placeholder { color: #7B9BB5; }
+        .success-msg { color: #00C9A7; font-size: 14px; margin-top: 10px; display: none; }
+        section { max-width: 900px; margin: 60px auto; padding: 0 20px; }
+        h2 { font-size: 28px; font-weight: 700; color: #fff; margin-bottom: 30px; text-align: center; }
+        .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 20px; }
+        .feature-card { background: #1E2D42; border: 1px solid #2A3F58; border-radius: 16px; padding: 24px; }
         .feature-icon { font-size: 32px; margin-bottom: 12px; }
-        .feature-title {
-            font-size: 16px;
-            font-weight: 700;
-            color: #ffffff;
-            margin-bottom: 8px;
-        }
+        .feature-title { font-size: 16px; font-weight: 700; color: #fff; margin-bottom: 8px; }
         .feature-desc { font-size: 14px; color: #7B9BB5; line-height: 1.6; }
-        .info-section {
-            background: #1E2D42;
-            border: 1px solid #2A3F58;
-            border-radius: 16px;
-            padding: 32px;
-            text-align: center;
-            margin: 40px 0;
-        }
+        .info-section { background: #1E2D42; border: 1px solid #2A3F58; border-radius: 16px; padding: 32px; text-align: center; margin: 40px 0; }
         .info-section p { color: #A8C4E0; font-size: 15px; line-height: 1.8; }
         .info-section a { color: #00C9A7; text-decoration: none; }
-        footer {
-            text-align: center;
-            padding: 40px 20px;
-            border-top: 1px solid #2A3F58;
-            color: #7B9BB5;
-            font-size: 13px;
-            line-height: 2;
-        }
+        .status-list { list-style: none; text-align: left; max-width: 400px; margin: 16px auto; }
+        .status-list li { padding: 8px 0; border-bottom: 1px solid #2A3F58; font-size: 14px; color: #A8C4E0; display: flex; justify-content: space-between; }
+        .status-ok { color: #00C9A7; font-weight: 700; }
+        .status-wip { color: #F5A623; font-weight: 700; }
+        .status-soon { color: #7B9BB5; }
+        footer { text-align: center; padding: 40px 20px; border-top: 1px solid #2A3F58; color: #7B9BB5; font-size: 13px; line-height: 2; }
         footer a { color: #00C9A7; text-decoration: none; }
+        .progress-bar { background: #2A3F58; border-radius: 8px; height: 8px; margin: 16px 0; overflow: hidden; }
+        .progress-fill { background: linear-gradient(90deg, #00C9A7, #0066FF); height: 100%; border-radius: 8px; width: 65%; }
     </style>
 </head>
 <body>
@@ -115,10 +45,43 @@
 <header>
     <h1>Catetin<span class="dot">.</span></h1>
     <p class="tagline">Kelola Keuangan, Jadi Lebih Cerdas</p>
-    <span class="badge">Android App · v1.0.0</span>
+    <span class="badge">🚧 Dalam Pengembangan · Android App</span>
     <br>
-    <a href="#download" class="btn-download">⬇ Download APK</a>
+    <div class="coming-soon-banner">🚀 Segera Hadir — Coming Soon!</div>
+    <br>
+    <p style="color:#7B9BB5; font-size:13px; margin-top:12px;">Aplikasi belum diluncurkan. Daftarkan email untuk mendapat notifikasi saat launch!</p>
+
+    <div class="notify-form">
+        <input type="email" id="emailInput" placeholder="Masukkan email kamu..."/>
+        <button class="btn-notify" onclick="submitNotify()">🔔 Beritahu Saya</button>
+    </div>
+    <p class="success-msg" id="successMsg">✅ Terima kasih! Kami akan beritahu kamu saat Catetin diluncurkan.</p>
+    <br>
+    <div class="btn-disabled">⬇ Download APK — Belum Tersedia</div>
 </header>
+
+<section>
+    <div class="info-section">
+        <div style="font-size:40px;margin-bottom:12px">⚙️</div>
+        <h2 style="margin-bottom:12px">Status Pengembangan</h2>
+        <div class="progress-bar"><div class="progress-fill"></div></div>
+        <p style="color:#00C9A7;font-weight:700;margin-bottom:16px">65% Selesai</p>
+        <ul class="status-list">
+            <li>Splash Screen + Animasi <span class="status-ok">✅ Selesai</span></li>
+            <li>Login & Register <span class="status-ok">✅ Selesai</span></li>
+            <li>Catat Transaksi <span class="status-ok">✅ Selesai</span></li>
+            <li>Database Offline (Room) <span class="status-ok">✅ Selesai</span></li>
+            <li>Firebase Auth & Firestore <span class="status-ok">✅ Selesai</span></li>
+            <li>Laporan & Grafik <span class="status-wip">🔄 Dalam Pengerjaan</span></li>
+            <li>Kelola Dompet <span class="status-wip">🔄 Dalam Pengerjaan</span></li>
+            <li>Anggaran Bulanan <span class="status-soon">⏳ Segera</span></li>
+            <li>Riwayat Transaksi <span class="status-soon">⏳ Segera</span></li>
+            <li>Export Data <span class="status-soon">⏳ Segera</span></li>
+            <li>Slip Transaksi <span class="status-soon">⏳ Segera</span></li>
+            <li>Iklan AdMob <span class="status-soon">⏳ Segera</span></li>
+        </ul>
+    </div>
+</section>
 
 <section>
     <h2>Fitur Unggulan</h2>
@@ -156,24 +119,12 @@
     </div>
 </section>
 
-<section id="download">
-    <div class="info-section">
-        <div style="font-size:48px;margin-bottom:16px">📱</div>
-        <h2 style="margin-bottom:16px">Download Catetin</h2>
-        <p>
-            Catetin tersedia untuk Android 7.0 ke atas.<br>
-            Segera hadir di Google Play Store.<br><br>
-            Package: <strong style="color:#00C9A7">com.domylomy.catetin</strong>
-        </p>
-    </div>
-</section>
-
 <section>
     <div class="info-section">
         <h2 style="margin-bottom:16px">Tentang Pengembang</h2>
         <p>
-            Dikembangkan oleh <strong style="color:#ffffff">Domy Lomy</strong><br>
-            dari <strong style="color:#ffffff">Caelum Gladio</strong><br><br>
+            Dikembangkan oleh <strong style="color:#fff">Domy Lomy</strong><br>
+            dari <strong style="color:#fff">Caelum Gladio</strong><br><br>
             <a href="https://www.caelumgladio.com">www.caelumgladio.com</a> &nbsp;·&nbsp;
             <a href="https://akademi.caelumgladio.com">akademi.caelumgladio.com</a>
         </p>
@@ -185,6 +136,18 @@
     <p><a href="https://www.caelumgladio.com">www.caelumgladio.com</a> · <a href="https://akademi.caelumgladio.com">akademi.caelumgladio.com</a></p>
     <p style="margin-top:8px;color:#2A3F58">Catetin v1.0.0 · com.domylomy.catetin</p>
 </footer>
+
+<script>
+function submitNotify() {
+    var email = document.getElementById("emailInput").value;
+    if (email && email.includes("@")) {
+        document.getElementById("successMsg").style.display = "block";
+        document.getElementById("emailInput").value = "";
+    } else {
+        alert("Masukkan email yang valid!");
+    }
+}
+</script>
 
 </body>
 </html>
